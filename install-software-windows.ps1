@@ -9,6 +9,7 @@ param
 
 #Create folders
 mkdir \git
+mkdir \testdotnetcore
 mkdir \testdotnetcore\config
 mkdir \testdotnetcore\log
 $source = 'C:\testdotnetcore\log' 
