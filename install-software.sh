@@ -115,7 +115,7 @@ firewall-cmd --reload
 environ=`env`
 # Create folders
 mkdir /git
-mkdir /testrest
+mkdir /testdotnetcore
 mkdir /testdotnetcore/log
 mkdir /testdotnetcore/config
 
