@@ -24,18 +24,31 @@ With Azure CLI you can deploy this VM with 2 command lines:
 
 
 ## CREATE RESOURCE GROUP:
-azure group create "ResourceGroupName" "DataCenterName"
+
+**Azure CLI:** azure group create "ResourceGroupName" "RegionName"
+
+**Azure CLI 2.0:** az group create an "ResourceGroupName" -l "RegionName"
 
 For instance:
 
+
     azure group create dotnetcorerg eastus2
 
+    az group create -n dotnetcorerg -l eastus2
+
 ## DEPLOY THE VM:
-azure group deployment create "ResourceGroupName" "DeploymentName"  -f azuredeploy.json -e azuredeploy.parameters.json
+
+**Azure CLI:** azure group deployment create "ResourceGroupName" "DeploymentName"  -f azuredeploy.json -e azuredeploy.parameters.json*
+
+**Azure CLI 2.0:** az group deployment create -g "ResourceGroupName" -n "DeploymentName" --template-file "templatefile.json" --parameters @"templatefile.parameter..json"  --verbose -o json
 
 For instance:
 
     azure group deployment create dotnetcorerg depdotnetcoretest -f azuredeploy.json -e azuredeploy.parameters.json -vv
+
+    az group deployment create -g dotnetcorerg -n depdotnetcoretest --template-file azuredeploy.json --parameter @azuredeploy.parameters.json --verbose -o json
+
+
 
 Beyond login/password, the input parameters are :</p>
 configurationSize (Small: F1 and 128 GB data disk, Medium: F2 and 256 GB data disk, Large: F4 and 512 GB data disk, XLarge: F4 and 1024 GB data disk) : 
@@ -94,8 +107,12 @@ For instance:
 
 
 ## DELETE THE RESOURCE GROUP:
-azure group delete "ResourceGroupName" "DataCenterName"
+**Azure CLI:** azure group delete "ResourceGroupName" "RegionName"
+
+**Azure CLI 2.0:** az group delete -n "ResourceGroupName" "RegionName"
 
 For instance:
 
     azure group delete dotnetcorerg eastus2
+
+    az group delete -n dotnetcorerg 
