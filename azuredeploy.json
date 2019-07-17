@@ -461,7 +461,7 @@
   "outputs": {
     "hostname": {
       "type": "string",
-      "value": "[concat(parameters('namePrefix'), '.', resourceGroup().location, '.cloudapp.azure.com')]"
+      "value": "[concat(parameters('namePrefix'), 'vm.', resourceGroup().location, '.cloudapp.azure.com')]"
     },
     "remoteCommand": {
       "type": "string",
